@@ -17,6 +17,14 @@
         topicsCount = 0,
         postsCount  = 0;
 
+    Job.getCurrentStats = function (done) {
+        return done(null, {
+            users : usersCount,
+            topics: topicsCount,
+            posts : postsCount
+        });
+    };
+
     Job.start = function (done) {
         if (working) {
             return done(new Error('Job is in progress. You can not start another'));
