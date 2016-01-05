@@ -1,0 +1,28 @@
+{
+  "name": "nodebb-widget-ns-stats",
+  "version": "1.0.0",
+  "description": "Overall stats about life on the forum. Some metrics are number of posts, users, topics. Also several additional user related features like - currently online users and who have visited today.",
+  "main": "./widget/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicolasSiver/nodebb-widget-ns-stats.git"
+  },
+  "keywords": [
+    "stats",
+    "posts",
+    "overall",
+    "metrics",
+    "topics",
+    "users",
+    "online"
+  ],
+  "author": "Nicolas Siver",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NicolasSiver/nodebb-widget-ns-stats/issues"
+  },
+  "homepage": "https://github.com/NicolasSiver/nodebb-widget-ns-stats#readme"
+}
