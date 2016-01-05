@@ -1,0 +1,34 @@
+{
+  "id": "nodebb-widget-ns-stats",
+  "name": "NodeBB Stats Widget",
+  "description": "Efficient widget to output all today's birthdays of community members.",
+  "url": "https://github.com/NicolasSiver/nodebb-widget-ns-stats",
+  "library": "./widget/index.js",
+  "hooks": [
+    {
+      "hook": "action:plugin.deactivate",
+      "method": "hooks.actions.pluginDeactivate"
+    },
+    {
+      "hook": "static:app.load",
+      "method": "hooks.statics.load"
+    },
+    {
+      "hook": "filter:plugins.clearRequireCache",
+      "method": "hooks.filters.clearRequireCache"
+    },
+    {
+      "hook": "filter:widgets.getWidgets",
+      "method": "hooks.filters.getWidgets"
+    },
+    {
+      "hook": "filter:widget.render:ns_stats",
+      "method": "hooks.filters.renderWidget"
+    }
+  ],
+  "templates": "./public/templates",
+  "css": [],
+  "less": [
+    "style/widget.less"
+  ]
+}
