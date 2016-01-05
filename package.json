@@ -24,5 +24,10 @@
   "bugs": {
     "url": "https://github.com/NicolasSiver/nodebb-widget-ns-stats/issues"
   },
-  "homepage": "https://github.com/NicolasSiver/nodebb-widget-ns-stats#readme"
+  "homepage": "https://github.com/NicolasSiver/nodebb-widget-ns-stats#readme",
+  "dependencies": {
+    "async": "^1.5.1",
+    "cron": "^1.1.0",
+    "winston": "^2.1.1"
+  }
 }
