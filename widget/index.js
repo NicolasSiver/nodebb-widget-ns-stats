@@ -1,0 +1,3 @@
+(function (Widget) {
+
+})(module.exports);
