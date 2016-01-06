@@ -4,9 +4,9 @@
         <div class="topics"><i class="fa fa-comment-o"></i> {stats.topics}</div>
         <div class="users"><i class="fa fa-user"></i> {stats.users}</div>
     </div>
-    
+
     <!-- IF today.length -->
-    <span>Visited today:</span>
+    <span>Visitors:</span>
 
     <div class="users-visited-today">
         <!-- BEGIN today -->
