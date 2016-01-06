@@ -6,7 +6,7 @@
     </div>
 
     <!-- IF today.length -->
-    <span>Visitors:</span>
+    <span class="list-title">{visitorsTitle}</span>
 
     <div class="users-visited-today">
         <!-- BEGIN today -->
@@ -14,4 +14,14 @@
         <!-- END today -->
     </div>
     <!-- ENDIF today.length -->
+
+    <!-- IF online.length -->
+    <span class="list-title">{onlineTitle}</span>
+
+    <div class="users-visited-today">
+        <!-- BEGIN online -->
+        <span class="user-today-item"><a href="{relative_path}/user/{online.userslug}">{online.username}</a></span>
+        <!-- END online -->
+    </div>
+    <!-- ENDIF online.length -->
 </div>

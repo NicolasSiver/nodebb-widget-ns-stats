@@ -90,6 +90,8 @@
                 return done(error);
             }
             data.relative_path = nconf.get('relative_path');
+            data.visitorsTitle = widget.data.visitorsTitle || 'Visitors Today:';
+            data.onlineTitle = widget.data.onlineTitle || 'Online:';
             done(null, templatesJs.parse(templates[Templates.VIEW].data, data));
         });
     };
