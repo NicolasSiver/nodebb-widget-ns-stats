@@ -17,6 +17,17 @@
                         logger.log('verbose', 'Plugin deactivation: everything is disposed');
                     });
                 }
+            },
+
+            /**
+             * @param payload will include 2 fields, 'uid' and 'timestamp'
+             */
+            userOnline: function (payload) {
+                controller.registerOnlineUser(payload.uid, function (error) {
+                    if (error) {
+                        return logger.log('error', '%s', error);
+                    }
+                });
             }
         },
         filters: {

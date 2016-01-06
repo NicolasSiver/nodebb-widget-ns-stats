@@ -3,7 +3,6 @@
     var async   = require('async'),
         CronJob = require('cron').CronJob,
         fs      = require('fs'),
-        moment  = require('moment'),
         path    = require('path');
 
     var job         = require('./job'),
@@ -11,7 +10,8 @@
         nodebb      = require('./nodebb'),
         nconf       = nodebb.nconf,
         templatesJs = nodebb.templates,
-        Templates   = require('./templates');
+        Templates   = require('./templates'),
+        users       = require('./users');
 
     var app       = null,
         cronJob   = null,
@@ -57,8 +57,8 @@
         }
 
         templates = {};
-        templates[Templates.SETTINGS] = {uri: 'widgets/birthdays/settings.tpl', data: undefined};
-        templates[Templates.VIEW] = {uri: 'widgets/birthdays/view.tpl', data: undefined};
+        templates[Templates.SETTINGS] = {uri: 'widgets/stats/settings.tpl', data: undefined};
+        templates[Templates.VIEW] = {uri: 'widgets/stats/view.tpl', data: undefined};
 
         async.each(Object.keys(templates), function (name, next) {
             var template = templates[name];
@@ -72,6 +72,10 @@
                 next(null);
             });
         }, done);
+    };
+
+    Controller.registerOnlineUser = function (uid, done) {
+        users.online(uid, done);
     };
 
     Controller.renderWidget = function (widget, done) {

@@ -10,6 +10,10 @@
       "method": "hooks.actions.pluginDeactivate"
     },
     {
+      "hook": "action:user.online",
+      "method": "hooks.actions.userOnline"
+    },
+    {
       "hook": "static:app.load",
       "method": "hooks.statics.load"
     },
