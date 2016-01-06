@@ -12,6 +12,7 @@ Overall stats about life on the forum. Some metrics are number of posts, users, 
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
  
 
+- [Look](#look)
 - [Implementation](#implementation)
 - [TODO](#todo)
 
