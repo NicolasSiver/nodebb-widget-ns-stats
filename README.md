@@ -17,6 +17,10 @@ Overall stats about life on the forum. Some metrics are number of posts, users, 
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+## Look
+
+![Widget Preview](screenshot.png)
+
 ## Implementation
 
 - Users are sorted by `username` in online list
