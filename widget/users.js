@@ -14,6 +14,7 @@
         onlineStatus  = 900000, // 15 minutes
         onlineLimit   = 128,
         lastRequestAt = 0,
+        storageKey    = 'widget:ns:stats',
         today         = [],
         todayIndex    = [];
 
@@ -75,7 +76,8 @@
                 todayIndex.push(uid);
                 today.push(userData);
                 logger.log('verbose', 'User %d is online', uid);
-                done(null);
+
+                db.setObject(storageKey, {today: todayIndex.join(',')}, done);
             });
         } else {
             done(null);
@@ -85,7 +87,7 @@
     Users.reset = function (done) {
         today.length = 0;
         todayIndex.length = 0;
-        done(null);
+        db.delete(storageKey, done);
     };
 
 })(module.exports);
