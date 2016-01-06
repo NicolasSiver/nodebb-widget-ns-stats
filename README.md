@@ -12,11 +12,21 @@ Overall stats about life on the forum. Some metrics are number of posts, users, 
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
  
 
+- [Implementation](#implementation)
 - [TODO](#todo)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Implementation
+
+- Users are sorted by `username` in online list
+- Users are sorted by time of appearance in today list
+- Online list response is cached for 60 seconds
+- Online list is limited to 128 records
+- Online status is true, if user was around for last 15 minutes
 
 ## TODO
 
 - Persist today visitors to the database
 - Add real-time updates
+- Use group colors for user list
