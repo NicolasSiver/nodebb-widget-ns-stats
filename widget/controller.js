@@ -79,39 +79,19 @@
     };
 
     Controller.renderWidget = function (widget, done) {
-        //var showAge = widget.data.showAge;
-        //
-        //async.waterfall([
-        //    async.apply(job.getUsers),
-        //    function format(users, next) {
-        //        users = users || [];
-        //        next(null, users.map(function (userData) {
-        //            return {
-        //                name    : userData.username,
-        //                birthday: userData.birthday,
-        //                userslug: userData.userslug
-        //            };
-        //        }));
-        //    },
-        //    function findAge(users, next) {
-        //        if (!showAge) {
-        //            next(null, {users: users});
-        //        } else {
-        //            var today = new Date();
-        //            next(null, {
-        //                users: users.map(function (userData) {
-        //                    userData.age = moment(today).diff(new Date(userData.birthday), 'years');
-        //                    return userData;
-        //                })
-        //            });
-        //        }
-        //    },
-        //    function render(data, next) {
-        //        data.relative_path = nconf.get('relative_path');
-        //        next(null, templatesJs.parse(templates[Templates.VIEW].data, data));
-        //    }
-        //], done);
-        done(null);
+        // Settings to access
+        // widget.data.something;
+
+        async.parallel({
+            stats: async.apply(job.getCurrentStats),
+            today: async.apply(users.getToday)
+        }, function (error, data) {
+            if (error) {
+                return done(error);
+            }
+            data.relative_path = nconf.get('relative_path');
+            done(null, templatesJs.parse(templates[Templates.VIEW].data, data));
+        });
     };
 
     Controller.setParams = function (params, done) {
