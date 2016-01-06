@@ -18,4 +18,5 @@ Overall stats about life on the forum. Some metrics are number of posts, users, 
 
 ## TODO
 
-- Feature: persist today visitors to the database
+- Persist today visitors to the database
+- Add real-time updates
