@@ -35,7 +35,7 @@
     };
 
     Users.reset = function (done) {
-        visited.length = 0;
+        today.length = 0;
         done(null);
     };
 
