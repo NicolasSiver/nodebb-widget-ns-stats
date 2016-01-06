@@ -10,5 +10,12 @@ Overall stats about life on the forum. Some metrics are number of posts, users, 
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+ 
+
+- [TODO](#todo)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## TODO
+
+- Feature: persist today visitors to the database
