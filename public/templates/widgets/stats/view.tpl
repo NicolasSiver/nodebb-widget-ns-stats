@@ -5,23 +5,23 @@
         <div class="users"><i class="fa fa-user"></i> {stats.users}</div>
     </div>
 
-    <!-- IF today.length -->
-    <span class="list-title">{visitorsTitle}</span>
-
-    <div class="users-visited-today">
-        <!-- BEGIN today -->
-        <span class="user-today-item"><a href="{relative_path}/user/{today.userslug}">{today.username}</a></span>
-        <!-- END today -->
-    </div>
-    <!-- ENDIF today.length -->
-
     <!-- IF online.length -->
-    <span class="list-title">{onlineTitle}</span>
+    <div class="list-title">{onlineTitle}</div>
 
-    <div class="users-visited-today">
+    <div class="users-online">
         <!-- BEGIN online -->
-        <span class="user-today-item"><a href="{relative_path}/user/{online.userslug}">{online.username}</a></span>
+        <span class="user-item"><a href="{relative_path}/user/{online.userslug}">{online.username}</a></span>
         <!-- END online -->
     </div>
     <!-- ENDIF online.length -->
+
+    <!-- IF today.length -->
+    <div class="list-title">{visitorsTitle}</div>
+
+    <div class="users-today">
+        <!-- BEGIN today -->
+        <span class="user-item"><a href="{relative_path}/user/{today.userslug}">{today.username}</a></span>
+        <!-- END today -->
+    </div>
+    <!-- ENDIF today.length -->
 </div>
