@@ -24,9 +24,11 @@ Overall stats about life on the forum. Some metrics are number of posts, users, 
 - Online list response is cached for 60 seconds
 - Online list is limited to 128 records
 - Online status is true, if user was around for last 15 minutes
+- General stats are cached for 1 day
 
 ## TODO
 
 - Persist today visitors to the database
 - Add real-time updates
 - Use group colors for user list
+- Show newest member and relative time when he/she joined
