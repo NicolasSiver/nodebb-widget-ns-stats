@@ -83,8 +83,9 @@
         // widget.data.something;
 
         async.parallel({
-            stats: async.apply(job.getCurrentStats),
-            today: async.apply(users.getToday)
+            stats : async.apply(job.getCurrentStats),
+            today : async.apply(users.getToday),
+            online: async.apply(users.getOnline)
         }, function (error, data) {
             if (error) {
                 return done(error);

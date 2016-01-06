@@ -8,12 +8,58 @@
         db     = nodebb.db,
         user   = nodebb.user;
 
-    var online     = [],
-        today      = [],
-        todayIndex = [];
+    var online        = [],
+        onlineIndex   = [],
+        onlineCache   = 60000,  // 1 minute
+        onlineStatus  = 900000, // 15 minutes
+        onlineLimit   = 128,
+        lastRequestAt = 0,
+        today         = [],
+        todayIndex    = [];
 
+    /**
+     * Reduce cost of the operation via 60 sec cache
+     * @param done {function}
+     */
     Users.getOnline = function (done) {
-        return done(null, online);
+        var now = Date.now();
+        if (now - lastRequestAt > onlineCache) {
+            var usersOnline, usersToFetch, usersInCache;
+            async.waterfall([
+                async.apply(db.getSortedSetRevRangeByScore, 'users:online', 0, onlineLimit, now, now - onlineStatus),
+                function findNewIds(uids, next) {
+                    usersOnline = uids.map(function (uid) {
+                        return parseInt(uid);
+                    });
+                    usersInCache = [];
+                    usersToFetch = usersOnline.filter(function (uid) {
+                        var cache = onlineIndex.indexOf(uid) != -1;
+                        if (cache) {
+                            usersInCache.push(uid);
+                        }
+                        return !cache;
+                    });
+                    next(null, usersToFetch);
+                },
+                function fetchIfNeeded(uids, next) {
+                    user.getUsersData(uids, next)
+                },
+                function composeUserList(users, next) {
+                    lastRequestAt = now;
+                    online = users.concat(online.filter(function (user) {
+                        return usersInCache.indexOf(parseInt(user.uid)) != -1;
+                    }));
+                    online.sort(function (userA, userB) {
+                        return userA.username.localeCompare(userB.username);
+                    });
+                    onlineIndex = usersOnline;
+
+                    next(null, online);
+                }
+            ], done);
+        } else {
+            return done(null, online);
+        }
     };
 
     Users.getToday = function (done) {
