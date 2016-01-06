@@ -8,8 +8,9 @@
         db     = nodebb.db,
         user   = nodebb.user;
 
-    var online = [],
-        today  = [];
+    var online     = [],
+        today      = [],
+        todayIndex = [];
 
     Users.getOnline = function (done) {
         return done(null, online);
@@ -20,12 +21,13 @@
     };
 
     Users.online = function (uid, done) {
-        if (!today[uid]) {
+        if (todayIndex.indexOf(uid) == -1) {
             user.getUserData(uid, function (error, userData) {
                 if (error) {
                     return done(error);
                 }
-                today[uid] = userData;
+                todayIndex.push(uid);
+                today.push(userData);
                 logger.log('verbose', 'User %d is online', uid);
                 done(null);
             });
@@ -36,6 +38,7 @@
 
     Users.reset = function (done) {
         today.length = 0;
+        todayIndex.length = 0;
         done(null);
     };
 
