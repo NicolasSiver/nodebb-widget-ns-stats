@@ -35,7 +35,6 @@
         endAt = null;
 
         async.parallel({
-            reset : async.apply(users.reset),
             users : async.apply(db.getObjectField, 'global', 'userCount'),
             topics: async.apply(db.getObjectField, 'global', 'topicCount'),
             posts : async.apply(db.getObjectField, 'global', 'postCount')
@@ -45,6 +44,14 @@
 
             if (error) {
                 return done(error);
+            }
+
+            if (usersCount != 0) {
+                users.reset(function (error) {
+                    if (error) {
+                        return logger.log('error', 'Can not reset users. %s', error);
+                    }
+                });
             }
 
             usersCount = result.users;
