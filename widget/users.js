@@ -90,4 +90,29 @@
         db.delete(storageKey, done);
     };
 
+    Users.restore = function (done) {
+        async.waterfall([
+            async.apply(db.getObject, storageKey),
+            function fetchIfNeeded(data, next) {
+                if (data != null && 'today' in data) {
+                    next(null, data.today.split(',').map(function (uid) {
+                        return parseInt(uid);
+                    }));
+                } else {
+                    next(null, []);
+                }
+            },
+            function fetchUsers(uids, next) {
+                user.getUsersData(uids, next);
+            },
+            function compose(users, next) {
+                today = users;
+                todayIndex = users.map(function (user) {
+                    return parseInt(user.uid);
+                });
+                next(null);
+            }
+        ], done);
+    };
+
 })(module.exports);

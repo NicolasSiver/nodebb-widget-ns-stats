@@ -50,6 +50,10 @@
         done(null, widgets);
     };
 
+    Controller.loadData = function (done) {
+        users.restore(done);
+    };
+
     Controller.loadTemplates = function (done) {
         if (templates !== null) {
             logger.log('warn', 'Templates are already loaded');

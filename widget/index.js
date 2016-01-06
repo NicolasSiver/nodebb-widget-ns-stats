@@ -50,6 +50,7 @@
                 async.series([
                     async.apply(controller.setParams, params),
                     async.apply(controller.loadTemplates),
+                    async.apply(controller.loadData),
                     async.apply(controller.deferStart),
                     async.apply(controller.setupCron)
                 ], function (error) {
