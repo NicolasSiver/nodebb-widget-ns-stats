@@ -79,7 +79,7 @@
     };
 
     Controller.registerOnlineUser = function (uid, done) {
-        users.online(uid, done);
+        users.online(parseInt(uid), done);
     };
 
     Controller.renderWidget = function (widget, done) {
