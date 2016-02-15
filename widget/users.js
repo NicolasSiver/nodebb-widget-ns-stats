@@ -106,6 +106,9 @@
                 user.getUsersData(uids, next);
             },
             function compose(users, next) {
+                users = users.filter(function (user) {
+                    return !!user;
+                });
                 today = users;
                 todayIndex = users.map(function (user) {
                     return parseInt(user.uid);
