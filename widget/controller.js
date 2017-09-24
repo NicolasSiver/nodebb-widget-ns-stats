@@ -97,7 +97,8 @@
             data.relative_path = nconf.get('relative_path');
             data.visitorsTitle = widget.data.visitorsTitle || 'Visitors Today';
             data.onlineTitle = widget.data.onlineTitle || 'Who\'s Online';
-            done(null, templatesJs.parse(templates[Templates.VIEW].data, data));
+            data.html = templatesJs.parse(templates[Templates.VIEW].data, data);
+            done(null, data);
         });
     };
 
