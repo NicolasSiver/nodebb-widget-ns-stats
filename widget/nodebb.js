@@ -40,6 +40,6 @@
         nconf    : NodeBB.require('nconf'),
         passport : NodeBB.require('passport'),
         express  : NodeBB.require('express'),
-        templates: NodeBB.require('templates.js')
+        templates: NodeBB.require('benchpressjs')
     };
 })(module, require.main);
