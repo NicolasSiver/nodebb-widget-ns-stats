@@ -1,6 +1,6 @@
 {
   "name": "nodebb-widget-ns-stats",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Overall stats about life on the forum. Some metrics are number of posts, users, topics. Also several additional user related features like - currently online users and who have visited today.",
   "main": "./widget/index.js",
   "scripts": {
