@@ -12,13 +12,13 @@ Overall stats about life on the forum. Some metrics are number of posts, users, 
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
  
 
-- [Look](#look)
+- [Preview](#preview)
 - [Implementation](#implementation)
-- [TODO](#todo)
+- [Ideas for future improvements](#ideas-for-future-improvements)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## Look
+## Preview
 
 ![Widget Preview](screenshot.png)
 
@@ -31,7 +31,7 @@ Overall stats about life on the forum. Some metrics are number of posts, users, 
 - Online status is true, if user was around for last 15 minutes
 - General stats are cached for 1 day
 
-## TODO
+## Ideas for future improvements
 
 - Add real-time updates
 - Use group colors for user list
