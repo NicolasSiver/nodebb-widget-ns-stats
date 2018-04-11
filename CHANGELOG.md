@@ -1,17 +1,27 @@
 # Changelog
+All notable changes to this project will be documented in this file.
 
-## v1.0.3 - 4/2/2016
+The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
+and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+
+## [2.0.0] - TBD
+
+- Changed compatibility with NodeBB 1.8.x
+- Changed dependencies to use latest
+- Changed widget hook to use HTML output
+
+## [1.0.3] - 2016-04-02
 
 - Compatibility with v1 NodeBB
 
-## v1.0.2 - 2/15/2016
+## [1.0.2] - 2016-02-15
 
 - Fix #2: handle null objects from NodeBB's User module
 
-## v1.0.1 - 1/18/2016
+## [1.0.1] - 2016-01-18
 
 - Possible fix with redis database and visitors list
 
-## v1.0.0 - 1/6/2016
+## [1.0.0] - 2016-01-06
 
 - initial release
