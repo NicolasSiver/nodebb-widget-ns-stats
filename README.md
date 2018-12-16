@@ -4,7 +4,6 @@ Overall stats about life on the forum. Some metrics are number of posts, users, 
 
 ![Version](https://img.shields.io/npm/v/nodebb-widget-ns-stats.svg)
 ![Dependencies](https://img.shields.io/bithound/dependencies/github/nicolassiver/nodebb-widget-ns-stats.svg)
-![bitHound Score](https://www.bithound.io/github/NicolasSiver/nodebb-widget-ns-stats/badges/score.svg)
 [![Maintainability](https://api.codeclimate.com/v1/badges/7b2349bd4833c108799c/maintainability)](https://codeclimate.com/github/NicolasSiver/nodebb-widget-ns-stats/maintainability)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -13,7 +12,6 @@ Overall stats about life on the forum. Some metrics are number of posts, users, 
 
 - [Preview](#preview)
 - [Implementation](#implementation)
-- [Ideas for future improvements](#ideas-for-future-improvements)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -29,9 +27,3 @@ Overall stats about life on the forum. Some metrics are number of posts, users, 
 - Online list is limited to 128 records
 - Online status is true, if user was around for last 15 minutes
 - General stats are cached for 1 day
-
-## Ideas for future improvements
-
-- Add real-time updates
-- Use group colors for user list
-- Show newest member and relative time when he/she joined
