@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/NicolasSiver/nodebb-widget-ns-stats#readme",
   "dependencies": {
-    "async": "^2.6.0",
+    "async": "^3.2.2",
     "cron": "^1.1.0",
     "winston": "^2.1.1"
   },
